@@ -14,25 +14,34 @@ const navItems = [
   { label: "About", href: "/about" },
 ] as const;
 
-const INDEPENDENCE = Date.UTC(1960, 9, 1);
 const DAY_MS = 86_400_000;
 
 function useIndependence() {
-  const [info, setInfo] = useState<{ days: number; today: boolean } | null>(
-    null,
-  );
+  const [info, setInfo] = useState<{
+    days: number;
+    today: boolean;
+    years: number;
+  } | null>(null);
 
   useEffect(() => {
     const now = new Date();
+
+    const year = now.getFullYear();
+    const month = now.getMonth();
+    const date = now.getDate();
+
+    const todayUtc = Date.UTC(year, month, date);
+    const independenceUtc = Date.UTC(1960, 9, 1);
+
     setInfo({
-      days: Math.floor((now.getTime() - INDEPENDENCE) / DAY_MS),
-      today: now.getMonth() === 9 && now.getDate() === 1,
+      days: Math.floor((todayUtc - independenceUtc) / DAY_MS),
+      today: month === 9 && date === 1,
+      years: year - 1960,
     });
   }, []);
 
   return info;
 }
-
 const flagStripe =
   "bg-[linear-gradient(90deg,#008751_33.33%,#ffffff_33.33%_66.66%,#008751_66.66%)]";
 
@@ -96,7 +105,7 @@ export default function Navigation() {
               <span suppressHydrationWarning className="truncate">
                 {info
                   ? info.today
-                    ? "Happy Independence Day · Nigeria @66"
+                    ? `Happy Independence Day · ${info.years} years`
                     : `${info.days.toLocaleString()} days since 1 October 1960`
                   : "Independence · 1 October 1960"}
               </span>
