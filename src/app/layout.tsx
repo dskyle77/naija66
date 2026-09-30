@@ -3,6 +3,7 @@ import "@/styles/globals.css";
 import Footer from "@/components/Footer";
 import Navigation from "@/components/Navigation";
 import PageTransition from "@/components/PageTransition";
+import { Analytics } from "@vercel/analytics/next";
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://naija66.example";
 
@@ -80,6 +81,7 @@ export default function RootLayout({
         <Navigation />
         <PageTransition>{children}</PageTransition>
         <Footer />
+        <Analytics/>
       </body>
     </html>
   );
