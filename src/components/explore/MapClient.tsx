@@ -47,7 +47,8 @@ export default function MapClient() {
         </p>
         <h1 className="mt-2 text-4xl md:text-6xl">Explore the Map</h1>
         <p className="mt-2 text-muted">
-          Click a state on the map, or pick one from the list, to open its story.
+          Click a state on the map, or pick one from the list, to open its
+          story.
         </p>
       </header>
 
@@ -91,7 +92,9 @@ export default function MapClient() {
             onSelect={(_code, name) => selectById(nameToStateId(name))}
           />
           <p className="mt-2 text-center text-xs text-muted">
-            Hover or tap a state to see its name.
+            <span className="hidden md:inline">Hover</span>{" "}
+            <span className="inline md:hidden">Tap</span> a state to see its
+            name.
           </p>
         </section>
 
@@ -185,7 +188,10 @@ export default function MapClient() {
                 <button
                   type="button"
                   onClick={() =>
-                    mapRef.current?.scrollIntoView({ behavior: "smooth", block: "start" })
+                    mapRef.current?.scrollIntoView({
+                      behavior: "smooth",
+                      block: "start",
+                    })
                   }
                   className="mt-6 w-full rounded-full border border-border py-2.5 text-sm font-medium text-foreground/80 transition-colors hover:bg-surface-muted lg:hidden"
                 >
