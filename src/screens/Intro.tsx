@@ -42,8 +42,8 @@ export default function Intro() {
           </p>
 
           <Motion preset={["move-right"]} className="flex flex-wrap gap-3">
-            <TransitionLink href="/explore">
-              Start the timeline
+            <TransitionLink href="/explore" className="animate-bounce">
+              Explore
               <ArrowRight />
             </TransitionLink>
           </Motion>
