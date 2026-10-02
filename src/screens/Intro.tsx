@@ -13,7 +13,7 @@ const stats = [
 export default function Intro() {
   return (
     <section className="relative min-h-screen overflow-hidden bg-background">
-      <div className="pointer-events-none absolute -left-40 -top-40 h-[32rem] w-[32rem] rounded-full bg-primary/15 blur-3xl" />
+      <div className="pointer-events-none absolute -left-40 -top-40 h-128 w-lg rounded-full bg-primary/15 blur-3xl" />
       <div
         className="pointer-events-none absolute inset-0 opacity-[0.35]"
         style={{
@@ -31,7 +31,7 @@ export default function Intro() {
 
           <h1 className="text-5xl font-bold leading-tight tracking-tight md:text-7xl">
             Nigeria{" "}
-            <span className="bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">
+            <span className="bg-linear-to-r from-primary to-primary/60 bg-clip-text text-transparent">
               @66
             </span>
           </h1>
@@ -59,7 +59,7 @@ export default function Intro() {
         </Motion>
 
         <Motion preset="fade" className="relative mx-auto w-full max-w-sm">
-          <div className="relative aspect-[3/4] overflow-hidden rounded-t-[999px] rounded-b-3xl border-4 border-surface shadow-2xl">
+          <div className="relative aspect-3/4 overflow-hidden rounded-t-pill rounded-b-3xl border-4 border-surface shadow-2xl">
             <Image
               src="/images/zuma-rock.jpg"
               alt="Zuma Rock, Niger State"
@@ -68,7 +68,7 @@ export default function Intro() {
               sizes="(min-width: 768px) 384px, 90vw"
               className="object-cover object-[54%_center] contrast-110 saturate-125"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-surface-dark/30 via-transparent to-primary/10" />
+            <div className="absolute inset-0 bg-linear-to-t from-surface-dark/30 via-transparent to-primary/10" />
             <div className="absolute inset-x-0 bottom-0 flex h-2">
               <div className="flex-1 bg-[#008751]" />
               <div className="flex-1 bg-white" />

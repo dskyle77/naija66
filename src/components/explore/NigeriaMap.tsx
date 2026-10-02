@@ -60,7 +60,7 @@ export function NigeriaSvgMap({ onSelect, selectedId, showLabels = true }: Props
             tabIndex={0}
             aria-label={s.name}
             aria-pressed={active}
-            className={`cursor-pointer stroke-primary stroke-[1] outline-none transition-colors focus-visible:stroke-[3] ${
+            className={`cursor-pointer stroke-primary stroke-1 outline-none transition-colors focus-visible:stroke-3 ${
               active ? "fill-primary/50" : "fill-primary/20 hover:fill-primary/40"
             }`}
             onClick={() => onSelect?.(s.code, s.name)}

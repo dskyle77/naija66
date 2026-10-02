@@ -124,7 +124,7 @@ export default function MapClient() {
                 </div>
 
                 {/* title + slogan */}
-                <h2 className="mt-4 break-words text-3xl font-bold leading-tight tracking-tight text-foreground sm:text-4xl md:text-5xl">
+                <h2 className="mt-4 wrap-break-word text-3xl font-bold leading-tight tracking-tight text-foreground sm:text-4xl md:text-5xl">
                   {selected.name}
                 </h2>
                 {selected.slogan && (
@@ -200,7 +200,7 @@ export default function MapClient() {
               </div>
             </article>
           ) : (
-            <div className="grid min-h-[12rem] place-items-center rounded-3xl sm:min-h-[20rem] border border-dashed border-border bg-surface/50 p-8 text-center">
+            <div className="grid min-h-48 place-items-center rounded-3xl sm:min-h-80 border border-dashed border-border bg-surface/50 p-8 text-center">
               <div>
                 <p className="text-lg font-medium text-foreground/80">
                   No state selected
